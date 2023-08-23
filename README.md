@@ -293,15 +293,15 @@ Gold : 1500 G
 
 **🔽 필수 요구사항 구현에 필요한 클래스 다이어그램 `설계 당시 모습`**
 
-![ReadMe%20a32f738df92f455d88e82af009c37b04/classDiagram_Sparta.png]({ReadMeImg/classDiagram_Sparta.png})
+![ReadMe%20a32f738df92f455d88e82af009c37b04/classDiagram_Sparta.png](ReadMeImg/classDiagram_Sparta.png)
 
 **🔽 필수 요구사항 구현에 필요한 클래스 다이어그램 `구현 후 수정된 모습`**
 
-![ReadMe%20a32f738df92f455d88e82af009c37b04/classDiagram_Sparta_(1).png]({ReadMeImg/classDiagram_Sparta_(1).png})
+![ReadMe%20a32f738df92f455d88e82af009c37b04/classDiagram_Sparta_(1).png](ReadMeImg/classDiagram_Sparta_(1).png)
 
 **🔽 선택 요구사항 구현에 필요한 클래스 다이어그램 `설계 당시 모습`**
 
-![초록색으로 표시된 부분: 수정 혹은 추가된 정보]({ReadMeImg/classDiagram_Sparta_(2).png})
+![초록색으로 표시된 부분: 수정 혹은 추가된 정보](ReadMeImg/classDiagram_Sparta_(2).png)
 
 초록색으로 표시된 부분: 수정 혹은 추가된 정보
 
