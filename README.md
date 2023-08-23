@@ -289,18 +289,19 @@ Gold : 1500 G
 [🔗 **스파르타 던전 (Text)게인 기능 명세서**](https://www.notion.so/Text-1032601976b64e60a2876d78b6a4bd39?pvs=21)
 
 ## 2️⃣ 클래스 다이어그램
+사진 배경이 투명환 관계로 깃허브의 다크모드를 끈 상태에서 봐주시기 바랍니다.😅
 
 **🔽 필수 요구사항 구현에 필요한 클래스 다이어그램 `설계 당시 모습`**
 
-![ReadMe%20a32f738df92f455d88e82af009c37b04/classDiagram_Sparta.png]({ReadMeImg/classDiagram_Sparta.png}#gh-light-mode-only)
+![ReadMe%20a32f738df92f455d88e82af009c37b04/classDiagram_Sparta.png]({ReadMeImg/classDiagram_Sparta.png})
 
 **🔽 필수 요구사항 구현에 필요한 클래스 다이어그램 `구현 후 수정된 모습`**
 
-![ReadMe%20a32f738df92f455d88e82af009c37b04/classDiagram_Sparta_(1).png]({ReadMeImg/classDiagram_Sparta_(1).png}#gh-light-mode-only)
+![ReadMe%20a32f738df92f455d88e82af009c37b04/classDiagram_Sparta_(1).png]({ReadMeImg/classDiagram_Sparta_(1).png})
 
 **🔽 선택 요구사항 구현에 필요한 클래스 다이어그램 `설계 당시 모습`**
 
-![초록색으로 표시된 부분: 수정 혹은 추가된 정보]({ReadMeImg/classDiagram_Sparta_(2).png}#gh-light-mode-only)
+![초록색으로 표시된 부분: 수정 혹은 추가된 정보]({ReadMeImg/classDiagram_Sparta_(2).png})
 
 초록색으로 표시된 부분: 수정 혹은 추가된 정보
 
