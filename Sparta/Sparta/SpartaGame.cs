@@ -125,7 +125,7 @@ namespace Sparta
             }
             else
             {
-                player.EquipItem(input);
+                player.EquipItem(--input);
                 DisplayManageEquipment();
             }
         }
@@ -437,7 +437,7 @@ namespace Sparta
                     Inventory.Instance().items = Inventory.Instance().items.OrderByDescending(item => item.equipped).ToList();
                     break;
                 case MsgDefine.OFFENSIVE_POWER:
-                    Inventory.Instance().items = Inventory.Instance().items.OrderBy(item => item.type).ToList();
+                    Inventory.Instance().items = Inventory.Instance().items.OrderByDescending(item => item.type).ToList();
                     break;
                 case MsgDefine.DEFENSIVE_POWER:
                     Inventory.Instance().items = Inventory.Instance().items.OrderByDescending(item => item.type).ToList();

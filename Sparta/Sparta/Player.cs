@@ -43,11 +43,13 @@ namespace Sparta
         public int def = 5;
         public int increasedAtk = 0;
         public int increasedDef = 0;
-        public int gold = 1500;
+        public int gold = 1600;
         Inventory inventory = Inventory.Instance();
         Store store = Store.Instance();
         HashSet<string> equippedAtkItems = new HashSet<string>();
         HashSet<string> equippedDefItems = new HashSet<string>();
+        Item atkItem = null;
+        Item defItem = null;
 
         public void UpdateInfo()
         {
@@ -107,7 +109,39 @@ namespace Sparta
 
         public void EquipItem(int idx)
         {
-            inventory.items[idx-1].Equip();
+            //inventory.items[idx].Equip();
+            if (inventory.items[idx].type == (int)ItemType.AttackItem)
+            {                  
+                if(atkItem == null)
+                {
+                    atkItem = inventory.items[idx];
+                }
+                if(atkItem.name != inventory.items[idx].name)
+                {
+                    if (atkItem.equipped)
+                    {
+                        atkItem.Equip();
+                    }
+                    atkItem = inventory.items[idx];
+                }
+                atkItem.Equip();
+            }
+            else
+            {
+                if (defItem == null)
+                {
+                    defItem = inventory.items[idx];
+                }
+                if (defItem.name != inventory.items[idx].name)
+                {
+                    if(defItem.equipped) 
+                    {
+                        defItem.Equip();
+                    }
+                    defItem = inventory.items[idx];
+                }
+                defItem.Equip();
+            }
         }
         public PurchaseType Purchase(int idx)
         {
