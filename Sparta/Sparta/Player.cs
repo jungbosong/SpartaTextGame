@@ -109,7 +109,6 @@ namespace Sparta
 
         public void EquipItem(int idx)
         {
-            //inventory.items[idx].Equip();
             if (inventory.items[idx].type == (int)ItemType.AttackItem)
             {                  
                 if(atkItem == null)
@@ -164,7 +163,25 @@ namespace Sparta
 
         public void Sell(int idx)
         {
-
+            if (inventory.items[idx].type == (int)ItemType.AttackItem)
+            {
+                if(atkItem != null && atkItem.equipped)
+                {
+                    atkItem.Equip();
+                }
+                atkItem = null;
+            }
+            if (inventory.items[idx].type == (int)ItemType.DefensiveItem)
+            {
+                if (defItem != null && defItem.equipped)
+                {
+                    defItem.Equip();
+                }
+                defItem = null;
+            }
+            gold += (int)(inventory.items[idx].price * 0.85);
+            inventory.items[idx].purchased = false;
+            inventory.DeleteItem(idx);
         }
 
         public string JobToString()

@@ -21,6 +21,7 @@ namespace Sparta
         Player player = Player.Instance();
         List<string> itemList = new List<string>();
         List<string> storeItemList = new List<string>();
+        List<string> sellItemList = new List<string>();
         public List<string> myInfo = new List<string>();
         private const int MAX_NAME_LENGTH = 10;
         private const int MAX_EFFECT_LENGTH = 10;
@@ -235,18 +236,25 @@ namespace Sparta
             Console.Write(MsgDefine.GOLD_POSSESSION);
             Console.WriteLine($"{player.gold} {MsgDefine.GOLD}\n");
 
-            SetStoreItemList();
-            WriteItemList(storeItemList);
+            SetSellItemList();
+            Console.BackgroundColor = ConsoleColor.Green;
+            Console.Write(sellItemList[0]);
+            for (int i = 1; i < sellItemList.Count; i++)
+            {
+                Console.Write($"- {i} {sellItemList[i]}");
+            }
+            Console.WriteLine();
+            Console.ResetColor();
 
             SetAction($"0. {MsgDefine.OUT}");
-            int input = CheckValidInput(0, Store.Instance().items.Count);
+            int input = CheckValidInput(0, Inventory.Instance().items.Count);
             if (input == 0)
             {
                 DisplayStore();
             }
             else
             {
-                player.Sell(input);
+                player.Sell(--input);
                 DisplaySell();
             }
         }
@@ -322,6 +330,27 @@ namespace Sparta
                 }
 
                 storeItemList.Add(tmp);
+            }
+        }
+
+        public void SetSellItemList()
+        {
+            sellItemList.Clear();
+            sellItemList.Add($"{MsgDefine.LIST_ITEM}\n");
+
+            foreach (Item item in Inventory.Instance().items)
+            {
+                string tmp = "";
+                if (item.type == (int)ItemType.DefensiveItem)
+                {
+                    tmp += string.Format("{0,-15}|{1,-10} +{2}|{3,-30}|{4,-10} G\n", item.name, MsgDefine.DEFENSIVE_POWER, item.effect, item.explanation, (int)item.price * 0.85);
+                }
+                else
+                {
+                    tmp += string.Format("{0,-15}|{1,-10} +{2}|{3,-30}|{4,-10} G\n", item.name, MsgDefine.OFFENSIVE_POWER, item.effect, item.explanation, (int)item.price * 0.85);
+                }
+
+                sellItemList.Add(tmp);
             }
         }
 
