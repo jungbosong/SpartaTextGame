@@ -1,5 +1,3 @@
-# SpartaTextGame ReadMe
-
 # 1. 게임 설명 및 개발 기간
 
 ## 1️⃣ 게임 설명
